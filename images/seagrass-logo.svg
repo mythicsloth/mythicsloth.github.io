@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 200 200" width="2048" height="2048">
+<title>06-balanced-clean</title>
+<g id="background" inkscape:groupmode="layer" inkscape:label="01 Background"><rect width="200" height="200" fill="#0d9488"/></g>
+<g id="rings" inkscape:groupmode="layer" inkscape:label="02 Concentric rings"><g fill="none" stroke="#0a746b" stroke-width="2.2"><circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="66"/><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="118"/><circle cx="100" cy="100" r="144"/></g></g>
+<g id="seagrass" inkscape:groupmode="layer" inkscape:label="03 Seagrass"><g fill="#042f2e"><path id="left-blade" d="M 100 168 C 89 153 72 146 69 128 C 66 113 76 103 75 91 C 74 75 62 68 63 51 C 76 60 82 73 82 90 C 82 108 90 122 94 137 C 98 151 100 163 100 168 Z"/><path id="center-blade" d="M 100 168 C 98 151 89 138 91 123 C 93 108 106 94 105 77 C 105 66 101 56 100 48 C 106 61 111 74 110 88 C 109 104 101 117 100 133 C 99 147 100 160 100 168 Z"/><path id="right-blade" d="M 100 168 C 111 153 128 146 131 128 C 134 113 124 103 125 91 C 126 75 138 68 137 51 C 124 60 118 73 118 90 C 118 108 110 122 106 137 C 102 151 100 163 100 168 Z"/></g></g>
+</svg>
