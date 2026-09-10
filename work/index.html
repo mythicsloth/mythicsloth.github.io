@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; img-src &#39;self&#39;; style-src &#39;self&#39;; script-src &#39;none&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Works | Jeffrey Lin</title>
     <meta
       name="description"
       content="Seagrass Robotics, ATHENA rover payload systems, and Jeffrey Lin’s mechanical engineering background."
     />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="stylesheet" crossorigin href="../assets/styles-CP2E6Ir5.css">
+    <link rel="stylesheet" crossorigin href="../assets/styles-B0CdjXd7.css">
   </head>
   <body class="work-page">
     <a class="skip" href="#main">Skip to content</a>
@@ -53,13 +56,25 @@
                 work across the airframe, buoyancy control, waterproof electronics,
                 and system integration.
               </p>
+              <fieldset class="version-picker seagrass-modes" id="seagrass-modes">
+                <legend>Explore the intended operating modes</legend>
+                <input class="choice-input" type="radio" name="seagrass-mode" id="mode-flight" checked /><label class="version-choice" for="mode-flight">Flight</label>
+                <input class="choice-input" type="radio" name="seagrass-mode" id="mode-underwater" /><label class="version-choice" for="mode-underwater">Underwater</label>
+                <div class="version-panel flight-panel"><span class="detail-label">REACH THE SITE</span><h5>Cover distance through the air.</h5><p>The flight mode is intended to bring the vehicle to a survey site. The airframe and propulsion support the aerial part of a mission before the transition into water.</p><div class="mode-components"><span>Airframe</span><span>Aerial propulsion</span></div></div>
+                <div class="version-panel underwater-panel"><span class="detail-label">EXPLORE BELOW THE SURFACE</span><h5>Move with buoyancy control.</h5><p>The underwater mode is intended to use buoyancy-driven gliding to move through the water and collect data. Buoyancy control, waterproof electronics, and integration connect this mode with the vehicle’s aerial operation.</p><div class="mode-components"><span>Buoyancy control</span><span>Waterproof electronics</span></div></div>
+              </fieldset>
             </div>
             <div class="seagrass-visual">
             <span class="tag"><span class="current-project-dot" aria-hidden="true"></span>CURRENT PROJECT</span>
             <figure class="work-image drone-work-image">
               <div class="work-image-frame">
                 <img src="../images/seagrass-drone.webp" width="1310" height="1043" alt="CAD view of the Seagrass Robotics hybrid aerial underwater drone" loading="lazy" decoding="async" />
+                <svg class="drone-mode-overlay" viewBox="20 107 1270 829" aria-hidden="true">
+                  <g class="flight-highlight"><path d="M838 489 1134 111 1288 121 936 544 802 580 367 932 198 894 759 562 Z" /><ellipse cx="1093" cy="614" rx="56" ry="196" transform="rotate(8 1093 614)" /></g>
+                  <g class="underwater-highlight"><path d="M180 329 809 478 929 519 1022 574 1072 612 1063 649 925 624 804 584 174 387 Z" /></g>
+                </svg>
               </div>
+              <figcaption class="drone-mode-caption"><span class="flight-caption">Flight · airframe and propulsion highlighted</span><span class="underwater-caption">Underwater · body region highlighted; internal systems are not visible in this CAD view</span></figcaption>
             </figure>
             </div>
           </div>
@@ -106,39 +121,137 @@
             </div>
           </div>
           <div class="subsystem-sections">
-            <section class="subsystem-section" aria-labelledby="deposition-title">
-              <figure class="work-image subsystem-image">
-                <div class="work-image-frame">
-                  <img src="../images/athena-deposition.webp" width="1160" height="1082" alt="CAD model of ATHENA’s deposition system" loading="lazy" decoding="async" />
-                </div>
-              </figure>
-              <div class="subsystem-copy">
-                <h4 id="deposition-title">Regolith<br /><span>Deposition System</span></h4>
-                <p>The deposition system needed to capture incoming regolith and keep it contained until delivery to the end zone. I designed V1 and V2 around that requirement, prioritizing material retention and capacity within the rover’s constrained design envelope. The aim was to make the available space as useful as possible while minimizing losses between collection and delivery.</p>
+            <nav class="athena-nav" aria-label="Explore ATHENA design">
+              <a href="#rover-explorer-title">Rover map</a><a href="#material-flow">Material flow</a><a href="#excavator">Excavator</a><a href="#deposition">Deposition</a><a href="#integration">Integration</a><a href="#lessons-learned">Lessons learned</a><a href="#future-concept">Future concept</a>
+            </nav>
+            <section class="rover-explorer" aria-labelledby="rover-explorer-title">
+              <div class="rover-explorer-copy">
+                <p class="eyebrow">EXPLORE ATHENA</p>
+                <h4 id="rover-explorer-title">Inside the rover</h4>
+                <p>Hover over a subsystem to highlight it. Click or tap to explore the design.</p>
+                <nav class="rover-map-links" aria-label="ATHENA subsystems">
+                  <a class="map-excavator" href="#excavator"><span class="map-number">01</span><span><strong>V3 Excavator System</strong><small>Collect and lift regolith</small></span><span aria-hidden="true">↗</span></a>
+                  <a class="map-deposition" href="#deposition"><span class="map-number">02</span><span><strong>V2 Deposition System</strong><small>Capture, retain, and deliver</small></span><span aria-hidden="true">↗</span></a>
+                  <a class="map-integration" href="#integration"><span class="map-number">03</span><span><strong>ATHENA System Integration</strong><small>Bring the subsystems together</small></span><span aria-hidden="true">↗</span></a>
+                </nav>
+              </div>
+              <div class="rover-map">
+                <img src="../images/athena-integration.png" width="1014" height="746" alt="ATHENA rover with numbered links: 01 front bucket ladder, 02 upper deposition assembly, 03 chassis integration." loading="lazy" decoding="async" />
+                <svg class="rover-map-overlay" viewBox="0 0 1014 746" aria-label="Interactive rover subsystem map">
+                  <a class="map-integration" href="#integration" aria-label="03: Explore ATHENA system integration">
+                    <polygon points="112,281 331,224 613,387 645,597 516,694 330,484 164,506 91,381" />
+                    <circle cx="380" cy="398" r="28" /><text x="380" y="398">03</text>
+                  </a>
+                  <a class="map-deposition" href="#deposition" aria-label="02: Explore V2 deposition system">
+                    <polygon points="149,110 315,12 531,113 687,207 639,430 388,305 171,241" />
+                    <circle cx="363" cy="169" r="28" /><text x="363" y="169">02</text>
+                  </a>
+                  <a class="map-excavator" href="#excavator" aria-label="01: Explore V3 excavator system">
+                    <polygon points="554,242 684,199 793,278 869,646 805,711 704,714 640,430" />
+                    <circle cx="747" cy="470" r="28" /><text x="747" y="470">01</text>
+                  </a>
+                </svg>
               </div>
             </section>
-            <section class="subsystem-section" aria-labelledby="excavator-title">
+            <section id="material-flow" class="design-module flow-module" aria-labelledby="flow-title">
+              <div class="module-heading"><div><p class="eyebrow">MATERIAL FLOW</p><h4 id="flow-title">Follow the regolith</h4></div><p>From collection to the end zone, every handoff matters.</p></div>
+              <fieldset class="flow-picker">
+                <legend>Select a stage to explore its design challenge</legend>
+                <input class="choice-input" type="radio" name="regolith-stage" id="flow-collect" checked /><label class="stage-choice" for="flow-collect"><strong>Collect</strong><span>Bucket ladder</span></label>
+                <input class="choice-input" type="radio" name="regolith-stage" id="flow-transfer" /><label class="stage-choice" for="flow-transfer"><strong>Transfer</strong><span>Subsystem handoff</span></label>
+                <input class="choice-input" type="radio" name="regolith-stage" id="flow-retain" /><label class="stage-choice" for="flow-retain"><strong>Retain</strong><span>Deposition system</span></label>
+                <input class="choice-input" type="radio" name="regolith-stage" id="flow-deliver" /><label class="stage-choice" for="flow-deliver"><strong>Deliver</strong><span>End zone</span></label>
+                <div class="material-track" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="flow-panel panel-collect"><div><span class="detail-label">THE TASK</span><h5>Collect and lift</h5><p>The bucket ladder collects regolith and lifts it toward the deposition system.</p></div><div><span class="detail-label">DESIGN FOCUS</span><p>Collection is the start of the material path. The design also needs to preserve that material through the next handoff.</p><a class="text-link" href="#excavator">Explore the excavator ↗</a></div></div>
+                <div class="flow-panel panel-transfer"><div><span class="detail-label">THE TASK</span><h5>Make the handoff</h5><p>Regolith moves from the excavator into the deposition system.</p></div><div><span class="detail-label">DESIGN FOCUS</span><p>This interface was a central focus of my work: reducing spillage without relying on slower operation to keep material contained.</p><a class="text-link" href="#integration">Explore system integration ↗</a></div></div>
+                <div class="flow-panel panel-retain"><div><span class="detail-label">THE TASK</span><h5>Keep what was collected</h5><p>The deposition system captures incoming regolith and holds it for transport.</p></div><div><span class="detail-label">DESIGN FOCUS</span><p>Maximize useful capacity and retention inside the rover’s permitted design envelope.</p><a class="text-link" href="#deposition">Explore the deposition system ↗</a></div></div>
+                <div class="flow-panel panel-deliver"><div><span class="detail-label">THE TASK</span><h5>Reach the end zone</h5><p>The retained regolith is transported to the end zone for deposition.</p></div><div><span class="detail-label">DESIGN FOCUS</span><p>The goal across the full material path is to preserve as much collected regolith as possible for delivery.</p><a class="text-link" href="#deposition">Explore the deposition system ↗</a></div></div>
+                <div class="flow-footer"><label class="motion-control"><input type="checkbox" id="flow-motion" /> Animate material path</label><span>Illustrative flow · not a performance simulation</span></div>
+              </fieldset>
+            </section>
+            <section id="excavator" class="subsystem-section" aria-labelledby="excavator-title">
               <figure class="work-image subsystem-image">
                 <div class="work-image-frame">
                   <img src="../images/athena-excavator.png" width="808" height="1172" alt="CAD model of ATHENA’s excavator assembly with bucket conveyor and drive mechanism" loading="lazy" decoding="async" />
                 </div>
+                <figcaption>V3 excavator assembly · reference image for all stages</figcaption>
               </figure>
               <div class="subsystem-copy">
-                <h4 id="excavator-title">Lunar Regolith<br /><span>Excavator</span></h4>
+                <h4 id="excavator-title">V3<br /><span>Excavator System</span></h4>
                 <p>Regolith lost during transfer limits how much material a rover can ultimately deliver. Our team used a bucket ladder architecture and focused on addressing the leakage and speed tradeoffs seen in earlier designs. I co-led the design and prototyping of V1 and V2, exploring how to retain more material during the handoff to the deposition system. These prototypes formed the basis for V3, which other team members developed.</p>
+                <fieldset class="version-picker excavator-versions">
+                  <legend>Design progression</legend>
+                  <input class="choice-input" type="radio" name="excavator-version" id="exc-v1" /><label class="version-choice" for="exc-v1">V1</label>
+                  <input class="choice-input" type="radio" name="excavator-version" id="exc-v2" /><label class="version-choice" for="exc-v2">V2</label>
+                  <input class="choice-input" type="radio" name="excavator-version" id="exc-v3" checked /><label class="version-choice" for="exc-v3">V3</label>
+                  <div class="version-panel exc-panel-v1"><span class="detail-label">MY ROLE · CO-LED DESIGN &amp; PROTOTYPING</span><h5>Early prototype</h5><p>I co-led the design and prototyping of V1. The early excavator work used a bucket ladder architecture, with regolith retention during transfer as a central design focus.</p></div>
+                  <div class="version-panel exc-panel-v2"><span class="detail-label">MY ROLE · CO-LED DESIGN &amp; PROTOTYPING</span><h5>Continued prototyping</h5><p>I also co-led V2. Together, V1 and V2 established the basis for V3, with my work focused on retaining material during the handoff to deposition.</p></div>
+                  <div class="version-panel exc-panel-v3"><span class="detail-label">DEVELOPED BY OTHER TEAM MEMBERS</span><h5>Built on the early prototypes</h5><p>Other team members developed the final V3 excavator from the foundation established through V1 and V2. The CAD view shows this later assembly.</p></div>
+                </fieldset>
+                <div class="design-decisions"><h5>Behind the design</h5>
+                  <details><summary>How does the bucket ladder fit the task?</summary><p>The bucket ladder combines collection and lifting along a moving series of buckets. Our design work focused on the transfer into deposition, where retaining material was critical to useful throughput.</p></details>
+                  <details><summary>Why focus on leakage?</summary><p>Material lost between subsystems cannot be delivered to the end zone. Earlier designs often faced leakage or a compromise in speed; our goal was to retain more regolith without sacrificing operating speed.</p></details>
+                </div>
               </div>
             </section>
-            <section class="subsystem-section" aria-labelledby="integration-title">
+            <section id="deposition" class="subsystem-section" aria-labelledby="deposition-title">
+              <figure class="work-image subsystem-image">
+                <div class="work-image-frame">
+                  <img src="../images/athena-deposition.webp" width="1160" height="1082" alt="CAD model of ATHENA’s deposition system" loading="lazy" decoding="async" />
+                </div>
+                <figcaption>V2 deposition assembly · reference image for both stages</figcaption>
+              </figure>
+              <div class="subsystem-copy">
+                <h4 id="deposition-title">V2<br /><span>Deposition System</span></h4>
+                <p>The deposition system needed to capture incoming regolith and keep it contained until delivery to the end zone. I designed V1 and V2 around that requirement, prioritizing material retention and capacity within the rover’s constrained design envelope. The aim was to make the available space as useful as possible while minimizing losses between collection and delivery.</p>
+                <fieldset class="version-picker deposition-versions">
+                  <legend>Design progression</legend>
+                  <input class="choice-input" type="radio" name="deposition-version" id="dep-v1" /><label class="version-choice" for="dep-v1">V1</label>
+                  <input class="choice-input" type="radio" name="deposition-version" id="dep-v2" checked /><label class="version-choice" for="dep-v2">V2</label>
+                  <div class="version-panel dep-panel-v1"><span class="detail-label">MY ROLE · DESIGNER</span><h5>First iteration</h5><p>I designed V1 as part of the deposition system’s development. Across V1 and V2, the priority was to capture and retain regolith within the available rover envelope.</p></div>
+                  <div class="version-panel dep-panel-v2"><span class="detail-label">MY ROLE · DESIGNER</span><h5>Second iteration</h5><p>I continued the deposition design through V2, working toward the same goal: use the available space effectively and preserve material for delivery to the end zone.</p></div>
+                </fieldset>
+                <div class="design-decisions"><h5>Behind the design</h5>
+                  <details><summary>What drove the deposition design?</summary><p>Retention and capacity were the main priorities. The system needed to catch regolith arriving from the excavator and keep it contained until delivery.</p></details>
+                  <details><summary>How did the size constraint shape the work?</summary><p>The rover had a permitted boundary box. My work focused on making useful space for regolith within that envelope while accounting for the interfaces with the other subsystems.</p></details>
+                </div>
+              </div>
+            </section>
+            <section id="integration" class="subsystem-section" aria-labelledby="integration-title">
               <figure class="work-image subsystem-image">
                 <div class="work-image-frame">
                   <img src="../images/athena-integration.png" width="1014" height="746" alt="CAD model of the complete ATHENA rover showing the excavator, chassis, and wheels" loading="lazy" decoding="async" />
                 </div>
               </figure>
               <div class="subsystem-copy">
-                <h4 id="integration-title">Rover<br /><span>System Integration</span></h4>
+                <h4 id="integration-title">ATHENA<br /><span>System Integration</span></h4>
                 <p>My work on ATHENA extended to how the subsystems functioned together. Transfers between mechanisms were a central design challenge: material could spill at the interface, while slowing the transfer could limit throughput. I helped integrate the subsystems with a focus on these handoffs, working to maintain a contained material path within the rover’s permitted dimensions.</p>
+                <div class="design-decisions"><h5>Behind the design</h5>
+                  <details><summary>What made the handoff a system-level challenge?</summary><p>The excavator’s output and deposition system’s intake had to work together. I worked across the team on these interfaces, with a focus on keeping material contained as it moved between mechanisms.</p></details>
+                  <details><summary>What tied my contributions together?</summary><p>Across excavator prototyping, deposition design, and integration, my focus was preserving regolith within the rover’s permitted dimensions so more of the collected material could reach the end zone.</p></details>
+                </div>
               </div>
             </section>
+            <div class="athena-reflections">
+              <section id="lessons-learned" class="design-module reflection-module" aria-labelledby="lessons-title">
+                <div class="module-heading"><div><p class="eyebrow">LOOKING BACK</p><h4 id="lessons-title">Lessons learned</h4></div></div>
+                <span class="detail-label">DRAFT REFLECTION</span>
+                <h5>Design the handoff as part of the system.</h5>
+                <p>Collecting regolith is only useful if it can be retained through transfer and delivery. The challenge on ATHENA highlights why the excavator and deposition system need to be developed around their shared interface, alongside their individual functions.</p>
+                <div class="design-decisions">
+                  <details><summary>What to carry into the next design</summary><p>Prototype the transfer between mechanisms early. Evaluate the material that reaches deposition, the material lost along the way, and the time required for the transfer together.</p></details>
+                </div>
+              </section>
+              <section id="future-concept" class="design-module reflection-module" aria-labelledby="future-title">
+                <div class="module-heading"><div><p class="eyebrow">LOOKING AHEAD</p><h4 id="future-title">Future design concept</h4></div></div>
+                <span class="detail-label">PROPOSED EXPLORATION · UNTESTED</span>
+                <h5>A more enclosed transfer path.</h5>
+                <p>One concept to explore is a guide or shroud around the handoff from the bucket ladder to deposition. The aim would be to direct more regolith into the receiving system while fitting within the rover’s permitted dimensions.</p>
+                <div class="design-decisions">
+                  <details><summary>What would need to be tested?</summary><p>Compare an enclosed handoff with the existing interface using the same material input and operating speed. Measure retained material, spillage, and transfer time, while checking for buildup, jamming, and interference with moving parts. Any retention benefit would need to be weighed against added mass and maintenance access.</p></details>
+                </div>
+              </section>
+            </div>
           </div>
         </article>
       </section>
@@ -177,7 +290,7 @@
                 aria-label="Jeffrey Lin on LinkedIn (opens in a new tab)"
                 title="LinkedIn"
                 ><svg
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
                 >
@@ -192,7 +305,7 @@
                 aria-label="Jeffrey Lin on GitHub (opens in a new tab)"
                 title="GitHub"
                 ><svg
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
                 >
@@ -205,7 +318,7 @@
                 aria-label="Email Jeffrey Lin"
                 title="Email"
                 ><svg
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.8"
