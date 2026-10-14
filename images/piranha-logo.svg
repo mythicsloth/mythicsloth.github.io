@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 250 250" role="img" aria-label="Piranha logo"><rect width="250" height="250" rx="55" fill="#0d9488"/><g fill="#042f2e" color="#042f2e"><path d="M196 125 C176 82 128 66 88 82 C68 90 54 106 48 125 C54 144 68 160 88 168 C128 184 176 168 196 125Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+<path d="M60 125 L36 92 C33 88 27 90 28 95 L36 125 L28 155 C27 160 33 162 36 158Z"/>
+<path d="M196 125 L172 116 L178 125 L172 134Z"/>
+<path d="M150 112 L158 102 L164 113 L171 103 L176 112" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M150 138 L158 148 L164 137 L171 147 L176 138" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="136" cy="104" r="8"/>
+<path d="M112 92 C102 112 102 138 112 158" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+<path d="M96 80 L118 54 L130 78Z"/></g></svg>
